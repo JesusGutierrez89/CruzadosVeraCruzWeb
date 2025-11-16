@@ -19,7 +19,7 @@ export default function Home() {
        <header className="px-4 lg:px-6 h-16 flex items-center border-b z-10 bg-accent/60 text-accent-foreground backdrop-blur-sm fixed top-0 w-full">
           <Link href="/" className="flex items-center justify-center" prefetch={false}>
             <Logo className="w-10 h-10" />
-            <span className="ml-2 font-headline text-lg font-semibold">Cruzados de la Vera Cruz</span>
+            <span className="ml-2 font-body text-lg font-semibold">Cruzados de la Vera Cruz</span>
           </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
           <Button asChild>
@@ -59,11 +59,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative container px-4 md:px-6 text-center text-white">
             <div className="space-y-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline text-slate-400 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-body text-slate-400 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
                 CRUZADOS DE LA VERA CRUZ
               </h1>
-              <p className="max-w-[700px] mx-auto text-xl md:text-2xl font-headline text-slate-400 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
-                En esta web encontraras todo lo referente a posesiones, socios y caracteristicas del grupo festero
+              <p className="max-w-[700px] mx-auto text-xl md:text-2xl font-body font-medium text-slate-400 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
+                En esta web encontrarás todo lo referente a posesiones, socios y características del grupo festero
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
                 <Button size="lg" asChild>
