@@ -19,6 +19,7 @@ module.exports = {
       fontFamily: {
         'body': ['Albert Sans', 'sans-serif'],
         'medieval': ['MedievalSharp', 'cursive'],
+        'oldlondon': ['Oldenburg', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

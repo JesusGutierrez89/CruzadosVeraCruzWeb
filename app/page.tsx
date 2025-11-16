@@ -1,11 +1,10 @@
 
-import { Button } from '@/components/ui/button';
-import { Shield } from 'lucide-react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Logo } from '@/components/logo';
 import { ContactFormModal } from '@/components/contact/contact-form';
+import { Logo } from '@/components/logo';
+import { Button } from '@/components/ui/button';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-image');
@@ -59,7 +58,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative container px-4 md:px-6 text-center text-white">
             <div className="space-y-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-body text-slate-400 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-oldlondon text-slate-400 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
                 CRUZADOS DE LA VERA CRUZ
               </h1>
               <p className="max-w-[700px] mx-auto text-xl md:text-2xl font-body font-medium text-slate-400 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
