@@ -1,0 +1,220 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "Escudo de los Cruzados de la Vera Cruz.",
+      "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/bekf9e2otccq3d6nqe25k/Escudo-Final.png?rlkey=mgzhwkw86eilb56c2hjon9l7h&dl=1",
+      "imageHint": "shield medieval"
+    },
+    {
+      "id": "app-logo",
+      "description": "Logo de la aplicación Cruzados de la Vera Cruz",
+      "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/97eh5jmc1xnm5y0vf89ga/Arpia-removebg-preview.png?rlkey=fxhoeu7fbqj93r83qh0oyftlm&dl=1",
+      "imageHint": "harpy emblem"
+    },
+    {
+      "id": "avatar-1",
+      "description": "User avatar",
+      "imageUrl": "https://images.unsplash.com/photo-1548544149-4835e62ee5b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwZmFjZXxlbnwwfHx8fDE3NjMxOTk2NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person face"
+    },
+    {
+      "id": "about-us-image",
+      "description": "Foto de la comparsa de los Cruzados de la Vera Cruz.",
+      "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/ncsapi2q2hf96fil38zkn/TodosCruzados.jpeg?rlkey=gikqt0nr19ava2pqyxg8ax69h&dl=1",
+      "imageHint": "group people"
+    },
+    {
+      "id": "join-us-image",
+      "description": "Cruzados desfilando",
+      "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/4tfz2fdsgxub2mq50yxvd/UnirseGrupo.jpeg?rlkey=yuyemu4zjexvcit64mk5t7x0e&dl=1",
+      "imageHint": "crusaders marching"
+    },
+    {
+      "id": "estandarte-image",
+      "description": "Estandarte de los Cruzados de la Vera Cruz",
+      "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/gss9tuyg8nws96rvg6gve/Estandarte.png?rlkey=v9qayk0tov4l4q0y1g9jbz6rt&dl=1",
+      "imageHint": "medieval banner"
+    },
+    {
+      "id": "bandera-image",
+      "description": "Bandera de los Cruzados de la Vera Cruz",
+      "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/f01h25r26w5g5wslwbqj5/Bandera.png?rlkey=9t5e646g3v6p1i86f345r1q20&dl=1",
+      "imageHint": "crusader flag"
+    },
+    {
+      "id": "sword-image",
+      "description": "Una espada medieval sin fondo.",
+      "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/vj3h475lhc8cr5yw7j23e/EspadaSinFondo.png?rlkey=x0c99tqpmbn22v845chderpub&dl=1",
+      "imageHint": "sword medieval"
+    },
+    {
+      "id": "axe-image",
+      "description": "Un hacha de batalla medieval.",
+      "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/mavcpfjrn6fve0vsxvs4z/HachaSinFondo.png?rlkey=m2zqnl00voh3qa1w71bms5k2s&dl=1",
+      "imageHint": "axe medieval"
+    },
+    {
+      "id": "bow-image",
+      "description": "Un arco largo con flechas.",
+      "imageUrl": "https://dl.dropboxusercontent.com/scl/fi/dtz6rhdh5pwcnfc7wc5u0/arcoSinFondo.png?rlkey=h5hfe3pf92dlndjjhwtp8wg0j&dl=1",
+      "imageHint": "bow arrow"
+    },
+    {
+      "id": "contact-us-image",
+      "description": "Fondo para la sección de contacto",
+      "imageUrl": "https://www.dropbox.com/scl/fi/u41dtxf877tqkxpk4pywa/fotoContacto.jpg?rlkey=4c9d3sbv2jnkjp668vvayj21d&dl=1",
+      "imageHint": "crusaders fire"
+    },
+    {
+      "id": "vestimenta-image",
+      "description": "Vestimenta de un cruzado.",
+      "imageUrl": "https://www.dropbox.com/scl/fi/5sguigbko7zan5k3y4iy7/casaca.png?rlkey=0wjp64yt37vbtbdiydouc6jx4&dl=1",
+      "imageHint": "crusader tunic"
+    },
+    {
+      "id": "proteccion-image",
+      "description": "Armadura de un cruzado.",
+      "imageUrl": "https://www.dropbox.com/scl/fi/79lmczqtig0hynr526yh8/coraza.png?rlkey=432cl4c4fmpi1ji8kvem6i689&dl=1",
+      "imageHint": "crusader armor"
+    },
+    {
+      "id": "complementos-image",
+      "description": "Complementos de un cruzado.",
+      "imageUrl": "https://www.dropbox.com/scl/fi/aiqhb63koxlvwk0h4z302/capa.png?rlkey=xokk6j5f5n9udt8i4g182fl8z&dl=1",
+      "imageHint": "crusader cape"
+    },
+    {
+      "id": "gallery-image-1",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/yfgpne8zjofab7xtil0yl/1652077435828.jpg?rlkey=icgm67kf4zckhkin55fotfats&st=1ghq25cj&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-2",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/osh8f3d3gtts8lqwx2gpc/443629822379697.jpg?rlkey=i2588t2ip1bbbyi4sp68tvhrs&st=b4t7szjz&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-3",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/w2ol64xz26x1nf9e3277s/443630075713005.jpg?rlkey=00z93rsiry59k0y9fg7qn57yt&st=ksr6t80w&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-4",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/6j9wpfn49nkbako0pzpm1/785751598167516.jpg?rlkey=j5c34vx360uuqcljpt5mp6u4x&st=9o4zsbxr&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-5",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/h80m6p8ecwxhym7b5j1tm/807123642696978.jpg?rlkey=xaorkq92lx1fe3c9xz7wqkz6u&st=y85c5wgc&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-6",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/hp9dky9djezz8zvcpuh6g/DSC-W510008.JPG?rlkey=z31pvgh49twud7dojfs71fng3&st=fgrdvyvd&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-7",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/k4uva28iwizsja274l2b5/DSLR-A330010.JPG?rlkey=ku8llh758ryc7sjyz55zqdlx4&st=ptnjo2r6&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-8",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/8529zpx7xi3yix60uh2gq/FILE122.JPG?rlkey=q8xo73c1qqae5yptybzjn6yol&st=q1anf3iy&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-9",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/o1vw7rba1ls8gsjsei7je/FILE237.JPG?rlkey=95urvuwgm67y7adj7rij6f85u&st=mijm0x7l&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-10",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/9u84xj24kpggxj0ibipfr/FILE343.JPG?rlkey=xmo7bqgxar8ja1o3fnq7a5fmt&st=wr4kwbic&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-11",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/avw61drrgcy58st6m0bz2/FILE354.JPG?rlkey=iu3pstm1yw773xavvq9cmmsvd&st=gmfh078f&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-12",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/6w9c3uopcclamzdnxuuoj/FILE363.JPG?rlkey=ev1ztico8yhy5rl18j64lphai&st=0cv11yo3&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-13",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/ovr82bh4p53otfhx473tj/FILE688.JPG?rlkey=el5irok87dkay74uzb6imkt72&st=n3w9xhkd&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-14",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/2qwqyq93iz3gqim3pvaqx/FILE693.JPG?rlkey=yqfqb8b7hmsbhrvjghg55lzrc&st=qcgk5zbh&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-15",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/wq55mir8aexa88i42r8a6/FILE694.JPG?rlkey=ln1c3oex4g0piudp0et9nkwu0&st=ibubl6hp&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-16",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/i1l1xb7rjqp251p2235ao/FILE695.JPG?rlkey=ho6sctjmief2ouytaujg5zw7q&st=fb76qpjw&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-17",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/f4m7d3lnu34coy3oe9g82/FILE699.JPG?rlkey=ex71uoy3uldhpu7h3urh5e0vb&st=uoagqod5&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-18",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/qnwq414wolmhavq92xlqm/FILE700.JPG?rlkey=2monm3wpyqk4ztqa2i7xiy8p1&st=9p5bqwg8&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-19",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/grd5rnobyng5qthse1h9a/FILE701.JPG?rlkey=x9ejnderyyqgy3twkg58ac2cw&st=era9utrp&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-20",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/aj6kcj953c4sy5go15ylh/FILE703.JPG?rlkey=5z28q3pxjdrvv1crherjzwc6h&st=3achhv94&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-21",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/o4zedv1x9kbmzt9ez3mg6/FILE707.JPG?rlkey=cfdid6t1sba9mzt0oyysa0fp1&st=uzof78et&dl=1",
+      "imageHint": "crusaders event"
+    },
+    {
+      "id": "gallery-image-22",
+      "description": "Imagen de la galería de los Cruzados",
+      "imageUrl": "https://www.dropbox.com/scl/fi/qv88srijrecqsrcva9f8u/procesion-114.jpg?rlkey=0xhkcrgs0civotk5f012okl4i&st=r0u6sop8&dl=1",
+      "imageHint": "crusaders event"
+    }
+  ]
+}
