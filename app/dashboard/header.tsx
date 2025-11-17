@@ -4,13 +4,20 @@ import { UserNav } from '@/components/dashboard/user-nav';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import {
     BookOpen,
+    Briefcase,
     Calendar,
+    Crown,
     Database,
     Files,
     ImageIcon,
     LayoutGrid,
+    Music,
+    Palette,
+    Scroll,
     Settings,
     Share2,
+    Truck,
+    Users,
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -18,6 +25,14 @@ import { usePathname } from 'next/navigation';
 const sectionMap: { [key: string]: { title: string; icon: JSX.Element } } = {
   '/dashboard': { title: 'Panel de Control', icon: <LayoutGrid /> },
   '/dashboard/info': { title: 'Comisiones', icon: <Files /> },
+  '/dashboard/info/redes-sociales': { title: 'Redes Sociales', icon: <Share2 /> },
+  '/dashboard/info/avituallamiento': { title: 'Avituallamiento, Sede y Caravana', icon: <Truck /> },
+  '/dashboard/info/patrimonio': { title: 'Patrimonio, Confección y Préstamo', icon: <Crown /> },
+  '/dashboard/info/musica': { title: 'Música, Boatos y Espectáculos', icon: <Music /> },
+  '/dashboard/info/historia': { title: 'Historia, Imagen y Representación', icon: <Scroll /> },
+  '/dashboard/info/diseno': { title: 'Diseño', icon: <Palette /> },
+  '/dashboard/info/dinamizacion': { title: 'Dinamización y Cohesión Interna', icon: <Users /> },
+  '/dashboard/info/relaciones': { title: 'Relaciones Institucionales, Proyectos y Financiación', icon: <Briefcase /> },
   '/dashboard/calendar': { title: 'Calendario de Actividades', icon: <Calendar /> },
   '/dashboard/gallery': { title: 'Galería de Fotos', icon: <ImageIcon /> },
   '/dashboard/database': { title: 'Base de Datos', icon: <Database /> },
