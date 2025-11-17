@@ -1,19 +1,19 @@
-import type { ReactNode } from 'react';
-import {
-  SidebarProvider,
-  Sidebar,
-  SidebarHeader,
-  SidebarContent,
-  SidebarFooter,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
-  SidebarInset,
-} from '@/components/ui/sidebar';
-import { Files, Settings, Calendar, ImageIcon, Database, BookOpen, Share2 } from 'lucide-react';
 import { DashboardHeader } from '@/app/dashboard/header';
-import Link from 'next/link';
 import { Logo } from '@/components/logo';
+import {
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarHeader,
+    SidebarInset,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+    SidebarProvider,
+} from '@/components/ui/sidebar';
+import { BookOpen, Calendar, Database, Files, ImageIcon, Settings, Share2 } from 'lucide-react';
+import Link from 'next/link';
+import type { ReactNode } from 'react';
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
 
@@ -32,7 +32,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
               <SidebarMenuButton asChild>
                 <Link href="/dashboard/info">
                   <Files />
-                  Información de Interés
+                  Comisiones
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>

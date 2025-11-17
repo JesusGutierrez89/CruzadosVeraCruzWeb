@@ -1,10 +1,10 @@
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { BookOpen, Calendar, Database, Files, ImageIcon, Share2 } from 'lucide-react';
 import Link from 'next/link';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Files, Calendar, ImageIcon, Database, BookOpen, Share2 } from 'lucide-react';
 
 const sections = [
   {
-    title: 'Información de Interés',
+    title: 'Comisiones',
     description: 'Documentos, textos e imágenes relevantes.',
     icon: <Files className="w-8 h-8 text-accent" />,
     href: '/dashboard/info',

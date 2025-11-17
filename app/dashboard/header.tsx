@@ -1,23 +1,23 @@
 'use client';
 
-import { SidebarTrigger } from '@/components/ui/sidebar';
 import { UserNav } from '@/components/dashboard/user-nav';
-import { usePathname } from 'next/navigation';
+import { SidebarTrigger } from '@/components/ui/sidebar';
 import {
-  Files,
-  Calendar,
-  ImageIcon,
-  Database,
-  BookOpen,
-  Settings,
-  LayoutGrid,
-  Share2,
+    BookOpen,
+    Calendar,
+    Database,
+    Files,
+    ImageIcon,
+    LayoutGrid,
+    Settings,
+    Share2,
 } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const sectionMap: { [key: string]: { title: string; icon: JSX.Element } } = {
   '/dashboard': { title: 'Panel de Control', icon: <LayoutGrid /> },
-  '/dashboard/info': { title: 'Información de Interés', icon: <Files /> },
+  '/dashboard/info': { title: 'Comisiones', icon: <Files /> },
   '/dashboard/calendar': { title: 'Calendario de Actividades', icon: <Calendar /> },
   '/dashboard/gallery': { title: 'Galería de Fotos', icon: <ImageIcon /> },
   '/dashboard/database': { title: 'Base de Datos', icon: <Database /> },
