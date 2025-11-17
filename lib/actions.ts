@@ -1,13 +1,13 @@
 
 'use server';
 
-import { z } from 'zod';
-import { createRecord, deleteRecord, updateRecord } from './data';
+import { initializeFirebaseOnServer } from '@/firebase/server-init';
+import { createUserWithEmailAndPassword, signOut as firebaseSignOut, updateProfile } from 'firebase/auth';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { initializeFirebaseOnServer } from '@/firebase/server-init';
-import { createUserWithEmailAndPassword, updateProfile, signOut as firebaseSignOut } from 'firebase/auth';
+import { z } from 'zod';
 import { sendContactEmail } from './email';
+import { createRecord, deleteRecord, updateRecord } from './firestore-data';
 
 const RecordSchema = z.object({
   id: z.string(),
@@ -23,7 +23,7 @@ const RecordSchema = z.object({
 const CreateRecord = RecordSchema.omit({ id: true });
 const UpdateRecord = RecordSchema.omit({ id: true });
 
-export async function handleCreateRecord(formData: FormData) {
+export async function handleCreateRecord(formData: FormData, commission: string = 'general') {
     const validatedFields = CreateRecord.safeParse({
         name: formData.get('name'),
         category: formData.get('category'),
@@ -38,21 +38,23 @@ export async function handleCreateRecord(formData: FormData) {
         };
     }
     
-    // NOTE: File handling logic needs to be implemented.
-    // For now, we'll just store names, but a real app needs to upload to a service like Firebase Storage.
-    const files = validatedFields.data.files;
-    const uploadedFiles = [];
-    if(files && files.length > 0 && files[0].size > 0) {
-        for (const file of files) {
-            // This is a placeholder. In a real app, you would upload the file to cloud storage
-            // and get a URL.
-            uploadedFiles.push({name: file.name, url: `/uploads/placeholder/${file.name}`});
-        }
-    }
-
     try {
+        // Handle files - use placeholder for now to avoid Firebase Storage issues
+        const files = validatedFields.data.files;
+        let uploadedFiles: { name: string; url: string }[] = [];
+        
+        if (files && files.length > 0 && files[0].size > 0) {
+            // Use placeholder URLs for now - Firebase Storage will be configured later
+            uploadedFiles = files.map((file: File) => ({
+                name: file.name,
+                url: `/uploads/placeholder/${file.name}` // Temporary placeholder
+            }));
+        }
+        
+        // Create the record with file data (or empty array)
         const dataToSave = { ...validatedFields.data, files: uploadedFiles };
-        await createRecord(dataToSave as any);
+        await createRecord(dataToSave as any, commission as any);
+        
         revalidatePath('/dashboard');
         
     } catch (error) {
@@ -63,7 +65,7 @@ export async function handleCreateRecord(formData: FormData) {
     }
 }
 
-export async function handleUpdateRecord(id: string, formData: FormData) {
+export async function handleUpdateRecord(id: string, formData: FormData, commission: string = 'general') {
     const validatedFields = UpdateRecord.safeParse({
         name: formData.get('name'),
         category: formData.get('category'),
@@ -78,20 +80,30 @@ export async function handleUpdateRecord(id: string, formData: FormData) {
         };
     }
   
-    // NOTE: File handling logic needs to be implemented.
-    const files = validatedFields.data.files;
-    const uploadedFiles = [];
-    if(files && files.length > 0 && files[0].size > 0) {
-        for (const file of files) {
-             // This is a placeholder. In a real app, you would upload the file to cloud storage
-            // and get a URL.
-            uploadedFiles.push({name: file.name, url: `/uploads/placeholder/${file.name}`});
-        }
-    }
-  
     try {
-        const dataToSave = { ...validatedFields.data, files: uploadedFiles };
-        await updateRecord(id, dataToSave as any);
+        // Handle files if new files are provided
+        const files = validatedFields.data.files;
+        let uploadedFiles: { name: string; url: string }[] = [];
+        
+        if (files && files.length > 0 && files[0].size > 0) {
+            // Use placeholder URLs for now - Firebase Storage will be configured later
+            uploadedFiles = files.map((file: File) => ({
+                name: file.name,
+                url: `/uploads/placeholder/${file.name}` // Temporary placeholder
+            }));
+        }
+        
+        // Prepare data to save (include files only if new ones were uploaded)
+        const dataToSave = uploadedFiles.length > 0 
+            ? { ...validatedFields.data, files: uploadedFiles }
+            : { ...validatedFields.data };
+            
+        // Remove files field if no files to avoid overwriting existing files with empty array
+        if (uploadedFiles.length === 0) {
+            delete (dataToSave as any).files;
+        }
+        
+        await updateRecord(id, dataToSave as any, commission as any);
         revalidatePath('/dashboard');
     } catch (error) {
         console.error("Database Error:", error);
@@ -101,12 +113,15 @@ export async function handleUpdateRecord(id: string, formData: FormData) {
     }
 }
 
-export async function handleDeleteRecord(id: string) {
+export async function handleDeleteRecord(id: string, commission: string = 'general') {
   try {
-    await deleteRecord(id);
+    // For now, just delete the record from database
+    // File deletion will be added when Firebase Storage is properly configured
+    await deleteRecord(id, commission as any);
     revalidatePath('/dashboard');
     return {};
   } catch (error) {
+    console.error("Delete Error:", error);
     return {
       message: 'Error de la base de datos: No se pudo eliminar la información.',
     };

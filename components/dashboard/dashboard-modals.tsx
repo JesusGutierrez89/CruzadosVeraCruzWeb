@@ -1,31 +1,31 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import { getRecordById } from '@/lib/data';
-import type { Record } from '@/lib/definitions';
-import { RecordForm } from './record-form';
-import { handleDeleteRecord } from '@/lib/actions';
-import { Button } from '../ui/button';
-import { Loader2 } from 'lucide-react';
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+} from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
+import { handleDeleteRecord } from '@/lib/actions';
+import type { Record } from '@/lib/definitions';
+import { getRecordById } from '@/lib/firestore-data';
+import { Loader2 } from 'lucide-react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { Button } from '../ui/button';
+import { RecordForm } from './record-form';
 
 export function DashboardModals() {
   const searchParams = useSearchParams();
@@ -39,17 +39,29 @@ export function DashboardModals() {
   const [loading, setLoading] = useState(false);
   const [pendingDelete, setPendingDelete] = useState(false);
 
+  // Extract commission from current path
+  const getCommissionFromPath = (path: string): string => {
+    const parts = path.split('/');
+    const infoIndex = parts.indexOf('info');
+    if (infoIndex !== -1 && infoIndex + 1 < parts.length) {
+      return parts[infoIndex + 1];
+    }
+    return 'general';
+  };
+
+  const currentCommission = getCommissionFromPath(pathname);
+
   useEffect(() => {
     if ((action === 'edit' || action === 'delete') && recordId) {
       setLoading(true);
-      getRecordById(recordId).then((data) => {
+      getRecordById(recordId, currentCommission as any).then((data: Record | null) => {
         setRecord(data || null);
         setLoading(false);
       });
     } else {
       setRecord(null);
     }
-  }, [action, recordId]);
+  }, [action, recordId, currentCommission]);
 
   const handleOpenChange = (isOpen: boolean) => {
     if (!isOpen) {
@@ -60,7 +72,7 @@ export function DashboardModals() {
   const onConfirmDelete = async () => {
     if (record?.id) {
         setPendingDelete(true);
-        const result = await handleDeleteRecord(record.id);
+        const result = await handleDeleteRecord(record.id, currentCommission);
         if (result?.message) {
             toast({
                 variant: 'destructive',
@@ -78,9 +90,9 @@ export function DashboardModals() {
     }
   }
 
-  const isEdit = action === 'edit' && recordId;
-  const isCreate = action === 'new';
-  const isDelete = action === 'delete' && recordId;
+  const isEdit = !!(action === 'edit' && recordId);
+  const isCreate = !!(action === 'new');
+  const isDelete = !!(action === 'delete' && recordId);
 
   return (
     <>

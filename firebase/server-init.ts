@@ -3,9 +3,10 @@
 // It should not contain any client-side specific code or 'use client' directives.
 
 import { firebaseConfig } from '@/firebase/config';
-import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
+import { FirebaseApp, getApp, getApps, initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
 // This function is intended to be called from server-side code (e.g., Server Actions, API routes).
 export function initializeFirebaseOnServer() {
@@ -24,5 +25,6 @@ function getSdks(firebaseApp: FirebaseApp) {
     firebaseApp,
     auth: getAuth(firebaseApp),
     firestore: getFirestore(firebaseApp),
+    storage: getStorage(firebaseApp),
   };
 }

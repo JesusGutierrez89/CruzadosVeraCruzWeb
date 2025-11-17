@@ -1,14 +1,6 @@
 'use client';
 
-import type { Record } from '@/lib/definitions';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
+import { Button } from '@/components/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -16,11 +8,22 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
-import { Button } from '@/components/ui/button';
-import { MoreHorizontal, Pencil, Trash2 } from 'lucide-react';
+} from "@/components/ui/dropdown-menu";
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from '@/components/ui/table';
+import type { Record } from '@/lib/definitions';
+import { Eye, MoreHorizontal, Pencil, Trash2 } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import { Badge } from '../ui/badge';
+import { RecordDetailModal } from './record-detail-modal';
 
 function formatDate(dateString: string) {
     return new Date(dateString).toLocaleDateString('es-ES', {
@@ -31,7 +34,21 @@ function formatDate(dateString: string) {
   }
 
 export function RecordsTable({ records }: { records: Record[] }) {
-  const pathname = '/dashboard/info'; // Hardcode for links
+  const pathname = usePathname(); // Usar la ruta actual
+  const [selectedRecord, setSelectedRecord] = useState<Record | null>(null);
+  const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
+
+  const handleRowClick = (record: Record, event: React.MouseEvent) => {
+    // No abrir modal si se clickea en el botón de acciones
+    const target = event.target as HTMLElement;
+    if (target.closest('[role="button"]') || target.closest('button')) {
+      return;
+    }
+    
+    setSelectedRecord(record);
+    setIsDetailModalOpen(true);
+  };
+
   return (
     <div className="rounded-lg border shadow-sm">
       <Table>
@@ -49,8 +66,17 @@ export function RecordsTable({ records }: { records: Record[] }) {
         <TableBody>
           {records.length > 0 ? (
             records.map((record) => (
-              <TableRow key={record.id}>
-                <TableCell className="font-medium text-sm md:text-base">{record.name}</TableCell>
+              <TableRow 
+                key={record.id}
+                className="cursor-pointer hover:bg-muted/50 transition-colors"
+                onClick={(e) => handleRowClick(record, e)}
+              >
+                <TableCell className="font-medium text-sm md:text-base">
+                  <div className="flex items-center gap-2">
+                    {record.name}
+                    <Eye className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </TableCell>
                 <TableCell className="hidden sm:table-cell">
                     <Badge variant={record.category === 'Documento' ? 'default' : record.category === 'Imagen' ? 'secondary' : 'outline' }>{record.category}</Badge>
                 </TableCell>
@@ -67,6 +93,14 @@ export function RecordsTable({ records }: { records: Record[] }) {
                     <DropdownMenuContent align="end">
                     <DropdownMenuLabel>Acciones</DropdownMenuLabel>
                     <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedRecord(record);
+                      setIsDetailModalOpen(true);
+                    }}>
+                      <Eye className="mr-2 h-4 w-4" />
+                      Ver detalles
+                    </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                         <Link href={`${pathname}?action=edit&id=${record.id}`}>
                             <Pencil className="mr-2 h-4 w-4" />
@@ -93,6 +127,16 @@ export function RecordsTable({ records }: { records: Record[] }) {
           )}
         </TableBody>
       </Table>
+
+      {/* Modal de detalles */}
+      <RecordDetailModal
+        record={selectedRecord}
+        isOpen={isDetailModalOpen}
+        onClose={() => {
+          setIsDetailModalOpen(false);
+          setSelectedRecord(null);
+        }}
+      />
     </div>
   );
 }

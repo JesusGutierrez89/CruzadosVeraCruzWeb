@@ -2,21 +2,22 @@ import { DashboardModals } from '@/components/dashboard/dashboard-modals';
 import { RecordsTable } from '@/components/dashboard/records-table';
 import { Search } from '@/components/dashboard/search';
 import { Button } from '@/components/ui/button';
-import { getRecords } from '@/lib/data';
+import { getRecords } from '@/lib/firestore-data';
 import { PlusCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default async function MusicaPage({
   searchParams,
 }: {
-  searchParams?: {
+  searchParams?: Promise<{
     q?: string;
     action?: string;
     id?: string;
-  };
+  }>;
 }) {
-  const query = searchParams?.q || '';
-  const records = await getRecords(query);
+  const params = await searchParams;
+  const query = params?.q || '';
+  const records = await getRecords(query, 'musica');
 
   return (
     <div className="space-y-6">
